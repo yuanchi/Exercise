@@ -43,4 +43,11 @@ public abstract class SecurityObject {
 	public void setReadonly(boolean readonly) {
 		this.readonly = readonly;
 	}
+	@Override
+	public int hashCode(){
+		if(this.id == null){
+			return 0;
+		}
+		return this.id.hashCode();
+	}
 }
