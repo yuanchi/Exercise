@@ -151,6 +151,26 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+		<dependency>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp-provider</artifactId>
+			<version>0.7.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jolbox</groupId>
+			<artifactId>bonecp</artifactId>
+			<version>0.8.0.RELEASE</version>
+		</dependency>
+		<dependency>
+	<groupId>com.jolbox</groupId>
+	<artifactId>bonecp-provider</artifactId>
+	<version>0.7.1.RELEASE</version>
+</dependency>
+		<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-c3p0</artifactId>
+	<version>4.3.10.Final</version>
+</dependency>
 		
   </dependencies>
   <build>

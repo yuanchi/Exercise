@@ -4,7 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Transient;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.GenericGenerator;
 
 @MappedSuperclass
@@ -22,7 +24,7 @@ public abstract class SecurityObject {
 		if(readonly){
 			throw new SecurityRuntimeException();
 		}
-		this.id = id;
+		this.id = StringUtils.trim(id);
 	}
 	@Column(name="name")
 	public String getName() {
@@ -32,8 +34,9 @@ public abstract class SecurityObject {
 		if(readonly){
 			throw new SecurityRuntimeException();
 		}
-		this.name = name;
+		this.name = StringUtils.trim(name);
 	}
+	@Transient
 	public boolean isReadonly() {
 		return readonly;
 	}

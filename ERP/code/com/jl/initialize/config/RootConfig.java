@@ -16,7 +16,7 @@ public class RootConfig {
 	@Bean
 	public DataSource dataSource(){
 		MySQLDataSource ds = new MySQLDataSource();
-		ds.setUrl("jdbc:mariadb://localhost:3306/angrycat");
+		ds.setUrl("jdbc:mariadb://localhost:3306/exercise");
 		ds.setUser("root");
 		return ds;
 	}
@@ -30,12 +30,12 @@ public class RootConfig {
 		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		props.setProperty("hibernate.show_sql", "true");
 		props.setProperty("hibernate.jdbc.batch_size", "100");
-		// connection pool: dbcp
-		props.setProperty("hibernate.connection.provider_class", "com.mkyong.util.DBCPConnectionProvider");
-		props.setProperty("hibernate.dbcp.initialSize", "10");
-		props.setProperty("hibernate.dbcp.maxActive", "20");
-		props.setProperty("hibernate.dbcp.maxIdle", "20");
-		props.setProperty("hibernate.dbcp.minIdle", "10");
+		// connection pool: c3p0
+		props.setProperty("hibernate.c3p0.min_size", "5");
+		props.setProperty("hibernate.c3p0.max_size", "20");
+		props.setProperty("hibernate.c3p0.timeout", "300");
+		props.setProperty("hibernate.c3p0.max_statements", "50");
+		props.setProperty("hibernate.c3p0.idle_test_period", "3000");
 		lsfb.setHibernateProperties(props);
 		
 		return lsfb;
